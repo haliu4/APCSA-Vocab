@@ -1,0 +1,282 @@
+import java.util.Random;
+public class Vocab
+{
+    static Random r = new Random();
+    static String quest="";
+    
+    public static String getGreeting()
+    {
+        return "Hello, this is APCSA Vocabulary Porgram";
+    }
+    
+    public static String getRandomDefinition()
+    {
+        quest = randomDefinitions[r.nextInt(randomDefinitions.length)];
+        return quest;
+    }
+    
+    public static String getResponse(String anw)
+    {
+        int a = 0;
+        for (int i = 0; i < randomDefinitions.length; i++)
+        {
+            if (randomDefinitions[i].equals(r))
+            {
+                a = i;
+            }
+        }
+		if (anw.indexOf("skip") >= 0)
+		{
+			System.out.println(getRandomDefinition());
+		}
+		if (anw.indexOf("quit") >= 0)
+		{
+		    return "Bye!";
+		}
+        if (anw.toLowerCase().equals(vocab[a]))
+        {
+            return "Congratulation! It is correct.";
+        }
+        else
+        {
+            System.out.println("Oops! That is not the right answer. Try in again.");
+            return quest;
+        }
+    }
+    
+    private static String [] vocab =
+    {
+        "problem-solving",
+        "high-level language",
+        "low-level language ",
+        "formal language",
+        "natural language ",
+        "portability",
+        "interpret",
+        "compile",
+        "source code", 
+        "object code",
+        "executable",
+        "byte code",
+        "statement",
+        "print statement",
+        "comment",
+        "method",
+        "library",
+        "Bug",
+        "syntax", 
+        "semantics", 
+        "parse",
+        "syntax error",
+        "variable",
+        "value",
+        "type",
+        "keyword",
+        "declaration", 
+        "assignment",
+        "expression",
+        "operator",
+        "operand",
+        "precedence", 
+        "concatenate",
+        "composition",
+        "initialization",
+        "floating-point",
+        "class",
+        "method",
+        "parameter",
+        "argument",
+        "frame",
+        "invoke",
+        "modulus",
+        "sign(%). conditional",
+        "chaining",
+        "nesting",
+        "typecast",
+        "recursion",
+        "base case",
+        "return type", 
+        "return value",
+        "dead code",
+        "scaffolding", 
+        "void",
+        "overloading",
+        "Boolean",
+        "Flag",
+        "conditional operator",
+        "logical operator",
+        "loop",
+        "infinite loop",
+        "Body",
+        "iteration",
+        "encapsulate",
+        "local variable",
+        "generalize",
+        "program development",
+        "object",
+        "index",
+        "exception",
+        "throw",
+        "stack trace",
+        "Prototype",
+        "Traverse",
+        "Counter",
+        "Increment",
+        "decrement",
+        "package ",
+        "Instance",
+        "instance variable",
+        "reference",
+        "garbage collection",
+        "State",
+        "state diagram",
+        "Class",
+        "Instance",
+        "constructor",
+        "startup class",
+        "pure function",
+        "modifier",
+        "fill-in method",
+        "algorithm",
+        "array",
+        "element", 
+        "index",
+        "deterministic",
+        "pseudorandom", 
+        "histogram",
+        "encode",
+        "identity",
+        "equivalence",
+        "abstract parameter", 
+        "abstraction",
+        "Pseudocode",
+        "helper method",
+        "class variable",
+        "object method",
+        "class method",
+        "current object",
+        "implicit",
+        "explicit",
+        "Coordinate",
+        "pixel",
+        "bounding box"
+    };
+    
+    private static String [] randomDefinitions =
+    {
+        "The process of formulating a problem, finding a solution, and expressing the solution",
+        "A programming language like Java that is designed to be easy for humans to read and write",
+        "A programming language that is designed to be easy for a computer to run.Also called “machine language” or “assembly language.” ",
+        "Any of the languages people have designed for specific purposes, like representing mathematical ideas or computer programs. All programming languages are formal languages.",
+        "Any of the languages people speak that have evolved naturally. ",
+        "A property of a program that can run on more than one kind of computer. ",
+        "To run a program in a high-level language by translating it one line at a time. ",
+        "To translate a program in a high-level language into a low-level language, all at once, in preparation for later execution. ",
+        "A program in a high-level language, before being compiled.",
+        "The output of the compiler, after translating the program",
+        "Another name for object code that is ready to run.", 
+        "A special kind of object code used for Java programs.Byte code is similar to a low-level language, but it is portable, like a high-level language.",
+        "A part of a program that specifies a computation. ",
+        "A statement that causes output to be displayed on the screen. ",
+        "A part of a program that contains information about the program, but that has no effect when the program runs. ",
+        "A named collection of statements.",
+        "A collection of class and method definitions.",
+        "An error in a program",
+        "The structure of a program",
+        "The meaning of a program",
+        "To examine a program and analyze the syntactic structure",
+        "An error in a program that makes it impossible to parse (and therefore impossible to compile).",
+        "A named storage location for values. All variables have a type, which is declared when the variable is created.",
+        "A number or string (or other thing to be named later) that can be stored in a variable. Every value belongs to a type. ",
+        "A set of values. The type of a variable determines which values can be stored there. The types we have seen are integers (int in Java) and strings (String in Java). ",
+        "A reserved word used by the compiler to parse programs. You cannot use keywords, like public, class and void as variable names. ",
+        "A statement that creates a new variable and determines its type.",
+        "A statement that assigns a value to a variable.",
+        "A combination of variables, operators and values that represents a single value. Expressions also have types, as determined by their operators and operands.",
+        "A symbol that represents a computation like addition, multiplication or string concatenation.",
+        "One of the values on which an operator operates. ",
+        "The order in which operations are evaluated. ",
+        "To join two operands end-to-end. ",
+        "The ability to combine simple expressions and statements into compound statements and expressions to represent complex computations concisely.",
+        "A statement that declares a new variable and assigns a value to it at the same time.",
+        "A type of variable (or value) that can contain fractions as well as integers. The floating-point type we will use is double. ",
+        "A named collection of methods. So far, we have used the Math class and the System class, and we have written classes named Hello and NewLine. ",
+        "A named sequence of statements that performs a useful function. Methods may or may not take parameters, and may or may not return a value. ",
+        "A piece of information a method requires before it can run. Parameters are variables: they contain values and have types.",
+        "A value that you provide when you invoke a method. This value must have the same type as the corresponding parameter. ",
+        "A structure (represented by a gray box in stack diagrams) that contains a method’s parameters and variables. ",
+        "Cause a method to execute",
+        "An operator that works on integers and yields the remainder when one number is divided by another. In Java it is denoted with a percent ",
+        "A block of statements that may or may not be executed depending on some condition.",
+        "A way of joining several conditional statements in sequence.",
+        "Putting a conditional statement inside one or both branches of another conditional statement. ",
+        "An operator that converts from one type to another. In Java it appears as a type name in parentheses, like (int).",
+        "The process of invoking the same method you are currently executing. ",
+        "A condition that causes a recursive method not to make a recursive call.",
+        "The part of a method declaration that indicates what type of value the method returns. ",
+        "The value provided as the result of a method invocation. ",
+        "Part of a program that can never be executed, often because it appears after a return statement. ",
+        "Code that is used during program development but is not part of the final version. ",
+        "A special return type that indicates a void method; that is, one that does not return a value. ",
+        "Having more than one method with the same name but different parameters. When you invoke an overloaded method, Java knows which version to use by looking at the arguments you provide. ",
+        "A type of variable that can contain only the two values true and false. ",
+        "A variable (usually boolean) that records a condition or status information. ",
+        "An operator that compares two values and produces a boolean that indicates the relationship between the operands. ",
+        "An operator that combines boolean values and produces boolean values.",
+        "A statement that executes repeatedly while some condition is satisfied. ",
+        "A loop whose condition is always true. ",
+        "The statements inside the loop",
+        "One pass through (execution of) the body of the loop, including the evaluation of the condition.",
+        "To divide a large complex program into components (like methods) and isolate the components from each other (for example, by using local variables). ",
+        "A variable that is declared inside a method and that exists only within that method. Local variables cannot be accessed from outside their home method, and do not interfere with any other methods.",
+        "To replace something unnecessarily specific (like a constant value) with something appropriately general (like a variable or parameter). Generalization makes code more versatile, more likely to be reused, and sometimes even easier to write. ",
+        "A process for writing programs. So far we have seen “incremental development” and “encapsulation and generalization”.",
+        "A collection of related data that comes with a set of methods that operate on it. The objects we have used so far are Strings, Bugs, Rocks, and the other GridWorld objects. ",
+        "A variable or value used to select one of the members of an ordered set, like a character from a string. ",
+        "A run-time error",
+        "Cause an exception",
+        "A report that shows the state of a program when an exception occurs.",
+        "The first line of a method, which specifies the name, parameters and return type. ",
+        "To iterate through all the elements of a set performing a similar operation on each.",
+        "A variable used to count something, usually initialized to zero and then incremented.",
+        "Increase the value of a variable by one. The increment operator in Java is ++. ",
+        "Decrease the value of a variable by one. The decrement operator in Java is --.",
+        "A collection of classes. Java classes are organized in packages. AWT: The Abstract Window Toolkit, one of the biggest and commonlyused Java packages. ",
+        "An example from a category. My cat is an instance of the category “feline things.” Every object is an instance of some class. ",
+        "One of the named data items that make up an object. Each object (instance) has its own copy of the instance variables for its class. ",
+        "A value that indicates an object. In a state diagram, a reference appears as an arrow.",
+        "The condition when two or more variables refer to the same object. ",
+        "The process of finding objects that have no references and reclaiming their storage space. ",
+        "A complete description of all the variables and objects and their values, at a given point during the execution of a program. ",
+        "A snapshot of the state of a program, shown graphically.",
+        "Previously, I defined a class as a collection of related methods. In this chapter we learned that a class definition is also a template for a new type of object.",
+        "A member of a class. Every object is an instance of some class.",
+        "A special method that initializes the instance variables of a newly-constructed object.",
+        "The class that contains the main method where execution of the program begins. ",
+        "A method whose result depends only on its parameters, and that has no side-effects other than returning a value. ",
+        "A method that changes one or more of the objects it receives as parameters, and usually returns void. ",
+        "A type of method that takes an “empty” object as a parameter and fills in its instance variables instead of generating a return value.",
+        "A set of instructions for solving a class of problems by a mechanical process.",
+        "A collection of values, where all the values have the same type, and each value is identified by an index. ",
+        "One of the values in an array. The [] operator selects elements. ",
+        "An integer variable or value used to indicate an element of an array. ",
+        "A program that does the same thing every time it is invoked.",
+        "A sequence of numbers that appear to be random, but which are actually the product of a deterministic computation. ",
+        "An array of integers where each integer counts the number of values that fall into a certain range.",
+        "To represent one set of values using another set of values, by constructing a mapping between them. ",
+        "Equality of references. Two references that point to the same object in memory. ",
+        "A set of parameters that act together as a single parameter. ",
+        "The process of interpreting a program (or anything else) at a higher level than what is literally represented by the code.",
+        "A way of designing programs by writing rough drafts in a combination of English and Java.",
+        "Often a small method that does not do anything enormously useful by itself, but which helps another, more useful method.",
+        "A variable declared within a class as static; there is always exactly one copy of this variable in existence.",
+        "A method that is invoked on an object, and that operates on that object. Object methods do not have the keyword static.",
+        "A method with the keyword static. Class methods are not invoked on objects and they do not have a current object. ",
+        "The object on which an object method is invoked. Inside the method, the current object is referred to by this. ",
+        "Anything that is left unsaid or implied. Within an object method, you can refer to the instance variables implicitly (i.e., without naming the object). ",
+        "Anything that is spelled out completely. Within a class method, all references to the instance variables have to be explicit.",
+        "A variable or value that specifies a location in a twodimensional graphical window.",
+        "The unit in which coordinates are measured. ",
+        "A common way to specify the coordinates of a rectangular area.",
+    };
+}
